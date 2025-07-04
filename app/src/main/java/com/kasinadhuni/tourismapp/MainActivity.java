@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Bottom navigation setup
+        // Bottom navigation setup am
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setSelectedItemId(R.id.navigation_attractions);
 
@@ -46,9 +46,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
 
         // Optional: Debug navigation changes
-        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-            android.util.Log.d("Navigation", "Navigated to: " + destination.getLabel());
-        });
+        navController.addOnDestinationChangedListener(
+                (controller, destination, arguments) ->
+                        android.util.Log.d("Navigation", "Navigated to: " + destination.getLabel())
+        );
     }
 
     // ⬅️ Ensure system back arrow works with NavController
